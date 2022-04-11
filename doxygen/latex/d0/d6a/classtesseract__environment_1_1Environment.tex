@@ -84,6 +84,10 @@ void \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4962a7b695aa52
 \begin{DoxyCompactList}\small\item\em This allows for user defined callbacks for looking up TCP information. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$ \mbox{\hyperlink{namespacetesseract__environment_a197ae00a2f4f5630ff6d044e2e6d7384}{Find\+TCPOffset\+Callback\+Fn}} $>$ \mbox{\hyperlink{classtesseract__environment_1_1Environment_a33bf42162c58e920492b15de4a5a5981}{get\+Find\+TCPOffset\+Callbacks}} () const
 \begin{DoxyCompactList}\small\item\em This get the current find tcp callbacks stored in the environment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtesseract__environment_1_1Environment_a125e92b32d648bf1a1fbaf9c7022add2}{add\+Event\+Callback}} (const \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}} \&fn)
+\begin{DoxyCompactList}\small\item\em Add an event callback function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$ \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}} $>$ \mbox{\hyperlink{classtesseract__environment_1_1Environment_a387097458321f7d41d77e76ee0aeb3b3}{get\+Event\+Callbacks}} () const
+\begin{DoxyCompactList}\small\item\em Get the current event callbacks stored in the environment. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classtesseract__environment_1_1Environment_ac82d299c1b7f7855f76e13a14d856536}{set\+Resource\+Locator}} (\mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\+\_\+common\+::\+Resource\+Locator\+::\+Const\+Ptr}} locator)
 \begin{DoxyCompactList}\small\item\em Set resource locator for environment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\+\_\+common\+::\+Resource\+Locator\+::\+Const\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a89c1999bd8798c6c8d7b5634efe972d8}{get\+Resource\+Locator}} () const
@@ -102,8 +106,10 @@ void \mbox{\hyperlink{classtesseract__environment_1_1Environment_a98d8a917830dbc
 \item 
 \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a1061bfeac8177a020ce095806d5cce3f}{get\+State}} () const
 \begin{DoxyCompactList}\small\item\em Get the current state of the environment. \end{DoxyCompactList}\item 
-std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::duration \mbox{\hyperlink{classtesseract__environment_1_1Environment_afb66ba4e4bdc13dd4438b090b52f1c84}{get\+Current\+State\+Timestamp}} () const
-\begin{DoxyCompactList}\small\item\em Get the current state timestamp. \end{DoxyCompactList}\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classtesseract__environment_1_1Environment_a58a80617a1b446b8084842309ed32c6b}{get\+Timestamp}} () const
+\begin{DoxyCompactList}\small\item\em Last update time. Updated when any change to the environment occurs. \end{DoxyCompactList}\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classtesseract__environment_1_1Environment_ace663ca8b20444b8726ee798ede1dd38}{get\+Current\+State\+Timestamp}} () const
+\begin{DoxyCompactList}\small\item\em Last update time to current state. Updated only when current state is updated. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__scene__graph_1_1Link_afad1873344245e2223664b6b7f846f1c}{tesseract\+\_\+scene\+\_\+graph\+::\+Link\+::\+Const\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4c82e08472b33079d232bbe4e9bc8c7f}{get\+Link}} (const std\+::string \&name) const
 \begin{DoxyCompactList}\small\item\em Get a link in the environment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__scene__graph_1_1Joint_a705d1f0a066833444550aa0c7f6d16b9}{tesseract\+\_\+scene\+\_\+graph\+::\+Joint\+::\+Const\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad5ad16cf42dcbc40c20851731e2f221d}{get\+Joint}} (const std\+::string \&name) const
@@ -163,7 +169,9 @@ bool \mbox{\hyperlink{classtesseract__environment_1_1Environment_a4ab1e3d2b9420b
 \mbox{\hyperlink{classtesseract__collision_1_1ContinuousContactManager_af3e8b59ffc319924eb2a7e3925bb6e56}{tesseract\+\_\+collision\+::\+Continuous\+Contact\+Manager\+::\+UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ada1bbee0356c54b84bcd5b5903b1d5fd}{get\+Continuous\+Contact\+Manager}} (const std\+::string \&name) const
 \begin{DoxyCompactList}\small\item\em Get a copy of the environments available continuous contact manager by name. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__common_1_1CollisionMarginData}{tesseract\+\_\+common\+::\+Collision\+Margin\+Data}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad526de2abbc241612f0cd2d2a5fb45de}{get\+Collision\+Margin\+Data}} () const
-\begin{DoxyCompactList}\small\item\em Get the environment collision margin data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the environment collision margin data. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+lock$<$ std\+::shared\+\_\+mutex $>$ \mbox{\hyperlink{classtesseract__environment_1_1Environment_a313b9e1b061718c86d08791719a4cf26}{lock\+Read}} () const
+\begin{DoxyCompactList}\small\item\em Lock the environment when wanting to make multiple reads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -192,7 +200,9 @@ int \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad8893d73b2310f6
 \begin{DoxyCompactList}\small\item\em The kinematics factory. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structtesseract__scene__graph_1_1SceneState}{tesseract\+\_\+scene\+\_\+graph\+::\+Scene\+State}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a255666138364e3fdb64d25ee424754e7}{current\+\_\+state\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Current state of the environment. \end{DoxyCompactList}\item 
-std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::duration \mbox{\hyperlink{classtesseract__environment_1_1Environment_a7c4176faf5fd8a4ed1dcacdf1b322a99}{current\+\_\+state\+\_\+timestamp\+\_\+}} \{ 0 \}
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classtesseract__environment_1_1Environment_aa294a3e822562cb0d5a9734e1561caa8}{timestamp\+\_\+}} \{ std\+::chrono\+::system\+\_\+clock\+::now() \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} timestamp. \end{DoxyCompactList}\item 
+std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classtesseract__environment_1_1Environment_ad73e4685735c23b90cdd7d76256645c2}{current\+\_\+state\+\_\+timestamp\+\_\+}} \{ std\+::chrono\+::system\+\_\+clock\+::now() \}
 \begin{DoxyCompactList}\small\item\em Current state timestamp. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__scene__graph_1_1MutableStateSolver_a1d061821b17d0e3a5bb9b0c3dc21a062}{tesseract\+\_\+scene\+\_\+graph\+::\+Mutable\+State\+Solver\+::\+UPtr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_acf779958589fad0a093858527229c9c8}{state\+\_\+solver\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Tesseract State Solver. \end{DoxyCompactList}\item 
@@ -200,6 +210,8 @@ std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::duration \mbox{\hyperlink{cl
 \begin{DoxyCompactList}\small\item\em The function used to determine if two objects are allowed in collision. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$ \mbox{\hyperlink{namespacetesseract__environment_a197ae00a2f4f5630ff6d044e2e6d7384}{Find\+TCPOffset\+Callback\+Fn}} $>$ \mbox{\hyperlink{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}{find\+\_\+tcp\+\_\+cb\+\_\+}}
 \begin{DoxyCompactList}\small\item\em A vector of user defined callbacks for locating tool center point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$ \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}} $>$ \mbox{\hyperlink{classtesseract__environment_1_1Environment_aeb48a50d897030e80b3517fd4897374c}{event\+\_\+cb\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A vector of user defined event callback functions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtesseract__common_1_1ResourceLocator_a61a53e45948c47a9612096d8e7b90252}{tesseract\+\_\+common\+::\+Resource\+Locator\+::\+Const\+Ptr}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_a84cabfb4d751d01d53838dd8545b1c14}{resource\+\_\+locator\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Used when initialized by URDF\+\_\+\+STRING, URDF\+\_\+\+STRING\+\_\+\+SRDF\+\_\+\+STRING, URDF\+\_\+\+PATH, and URDF\+\_\+\+PATH\+\_\+\+SRDF\+\_\+\+PATH. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structtesseract__common_1_1ContactManagersPluginInfo}{tesseract\+\_\+common\+::\+Contact\+Managers\+Plugin\+Info}} \mbox{\hyperlink{classtesseract__environment_1_1Environment_ab66f1c154e58076c091231ffc4862d95}{contact\+\_\+managers\+\_\+plugin\+\_\+info\+\_\+}}
@@ -355,6 +367,24 @@ Default constructor.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_a125e92b32d648bf1a1fbaf9c7022add2}\label{classtesseract__environment_1_1Environment_a125e92b32d648bf1a1fbaf9c7022add2}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!addEventCallback@{addEventCallback}}
+\index{addEventCallback@{addEventCallback}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{addEventCallback()}{addEventCallback()}}
+{\footnotesize\ttfamily void tesseract\+\_\+environment\+::\+Environment\+::add\+Event\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}} \&}]{fn }\end{DoxyParamCaption})}
+
+
+
+Add an event callback function. 
+
+When these get called they are protected by a unique lock internally so if the callback is a long event it can impact performance. \begin{DoxyNote}{Note}
+These do not get cloned or serialized 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em fn} & User defined callback function which gets called for different event triggers \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classtesseract__environment_1_1Environment_a4962a7b695aa525a64ae895f811a5e70}\label{classtesseract__environment_1_1Environment_a4962a7b695aa525a64ae895f811a5e70}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!addFindTCPOffsetCallback@{addFindTCPOffsetCallback}}
 \index{addFindTCPOffsetCallback@{addFindTCPOffsetCallback}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
@@ -765,15 +795,15 @@ Order should be the same as the input vector
 \begin{DoxyReturn}{Returns}
 A vector of joint values 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtesseract__environment_1_1Environment_afb66ba4e4bdc13dd4438b090b52f1c84}\label{classtesseract__environment_1_1Environment_afb66ba4e4bdc13dd4438b090b52f1c84}} 
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_ace663ca8b20444b8726ee798ede1dd38}\label{classtesseract__environment_1_1Environment_ace663ca8b20444b8726ee798ede1dd38}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!getCurrentStateTimestamp@{getCurrentStateTimestamp}}
 \index{getCurrentStateTimestamp@{getCurrentStateTimestamp}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
 \doxysubsubsection{\texorpdfstring{getCurrentStateTimestamp()}{getCurrentStateTimestamp()}}
-{\footnotesize\ttfamily std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::duration tesseract\+\_\+environment\+::\+Environment\+::get\+Current\+State\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point tesseract\+\_\+environment\+::\+Environment\+::get\+Current\+State\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Get the current state timestamp. 
+Last update time to current state. Updated only when current state is updated. 
 
 \mbox{\Hypertarget{classtesseract__environment_1_1Environment_a6394d4dde8fa7109c07fdccc6c955c66}\label{classtesseract__environment_1_1Environment_a6394d4dde8fa7109c07fdccc6c955c66}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!getDiscreteContactManager@{getDiscreteContactManager}}
@@ -801,6 +831,19 @@ Get a copy of the environments available discrete contact manager by name.
 \doxysubsubsection{\texorpdfstring{getDiscreteContactManagerHelper()}{getDiscreteContactManagerHelper()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classtesseract__collision_1_1DiscreteContactManager_a52a7b770e7b6cec875254d7cdea3c314}{tesseract\+\_\+collision\+::\+Discrete\+Contact\+Manager\+::\+UPtr}} tesseract\+\_\+environment\+::\+Environment\+::get\+Discrete\+Contact\+Manager\+Helper (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_a387097458321f7d41d77e76ee0aeb3b3}\label{classtesseract__environment_1_1Environment_a387097458321f7d41d77e76ee0aeb3b3}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!getEventCallbacks@{getEventCallbacks}}
+\index{getEventCallbacks@{getEventCallbacks}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{getEventCallbacks()}{getEventCallbacks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$ \mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}} $>$ tesseract\+\_\+environment\+::\+Environment\+::get\+Event\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current event callbacks stored in the environment. 
+
+\begin{DoxyReturn}{Returns}
+A vector of callback functions 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtesseract__environment_1_1Environment_a33bf42162c58e920492b15de4a5a5981}\label{classtesseract__environment_1_1Environment_a33bf42162c58e920492b15de4a5a5981}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!getFindTCPOffsetCallbacks@{getFindTCPOffsetCallbacks}}
 \index{getFindTCPOffsetCallbacks@{getFindTCPOffsetCallbacks}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
@@ -1220,6 +1263,16 @@ Get a vector of static link names not affected by the provided joints in the env
 \begin{DoxyReturn}{Returns}
 A vector of static link names 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_a58a80617a1b446b8084842309ed32c6b}\label{classtesseract__environment_1_1Environment_a58a80617a1b446b8084842309ed32c6b}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}}
+{\footnotesize\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point tesseract\+\_\+environment\+::\+Environment\+::get\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Last update time. Updated when any change to the environment occurs. 
+
 \mbox{\Hypertarget{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}\label{classtesseract__environment_1_1Environment_a64a181eec8532a17b8fc174f1a3b9a97}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!init@{init}}
 \index{init@{init}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
@@ -1300,7 +1353,17 @@ True if successful, otherwise false
 
 check if the environment is initialized 
 
-\mbox{\Hypertarget{classtesseract__environment_1_1Environment_ac907443876999cd9ce7b83d78095eda7}\label{classtesseract__environment_1_1Environment_ac907443876999cd9ce7b83d78095eda7}} 
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_a313b9e1b061718c86d08791719a4cf26}\label{classtesseract__environment_1_1Environment_a313b9e1b061718c86d08791719a4cf26}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!lockRead@{lockRead}}
+\index{lockRead@{lockRead}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{lockRead()}{lockRead()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+lock$<$ std\+::shared\+\_\+mutex $>$ tesseract\+\_\+environment\+::\+Environment\+::lock\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Lock the environment when wanting to make multiple reads. 
+
+This is useful when making multiple read function calls and don\textquotesingle{}t want the data to get updated between function calls when there a multiple threads updating a single environment \mbox{\Hypertarget{classtesseract__environment_1_1Environment_ac907443876999cd9ce7b83d78095eda7}\label{classtesseract__environment_1_1Environment_ac907443876999cd9ce7b83d78095eda7}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!operator=@{operator=}}
 \index{operator=@{operator=}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -1483,11 +1546,11 @@ The continuous contact manager object.
 
 Current state of the environment. 
 
-\mbox{\Hypertarget{classtesseract__environment_1_1Environment_a7c4176faf5fd8a4ed1dcacdf1b322a99}\label{classtesseract__environment_1_1Environment_a7c4176faf5fd8a4ed1dcacdf1b322a99}} 
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_ad73e4685735c23b90cdd7d76256645c2}\label{classtesseract__environment_1_1Environment_ad73e4685735c23b90cdd7d76256645c2}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!current\_state\_timestamp\_@{current\_state\_timestamp\_}}
 \index{current\_state\_timestamp\_@{current\_state\_timestamp\_}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
 \doxysubsubsection{\texorpdfstring{current\_state\_timestamp\_}{current\_state\_timestamp\_}}
-{\footnotesize\ttfamily std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::duration tesseract\+\_\+environment\+::\+Environment\+::current\+\_\+state\+\_\+timestamp\+\_\+ \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point tesseract\+\_\+environment\+::\+Environment\+::current\+\_\+state\+\_\+timestamp\+\_\+ \{ std\+::chrono\+::system\+\_\+clock\+::now() \}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -1503,7 +1566,17 @@ Current state timestamp.
 
 The discrete contact manager object. 
 
-\mbox{\Hypertarget{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}\label{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}} 
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_aeb48a50d897030e80b3517fd4897374c}\label{classtesseract__environment_1_1Environment_aeb48a50d897030e80b3517fd4897374c}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!event\_cb\_@{event\_cb\_}}
+\index{event\_cb\_@{event\_cb\_}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{event\_cb\_}{event\_cb\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vhacdRaycastMesh_8cpp_adcf134d50025cc52907d0c8ac798d89d}{std\+::vector}}$<$\mbox{\hyperlink{namespacetesseract__environment_a842b4038cfb894a0b9cc45e6aea1e8c5}{Event\+Callback\+Fn}}$>$ tesseract\+\_\+environment\+::\+Environment\+::event\+\_\+cb\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A vector of user defined event callback functions. 
+
+This should not be cloned or serialized \mbox{\Hypertarget{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}\label{classtesseract__environment_1_1Environment_ae9a92e802b4924edfd5292874beb8c20}} 
 \index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!find\_tcp\_cb\_@{find\_tcp\_cb\_}}
 \index{find\_tcp\_cb\_@{find\_tcp\_cb\_}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
 \doxysubsubsection{\texorpdfstring{find\_tcp\_cb\_}{find\_tcp\_cb\_}}
@@ -1670,6 +1743,16 @@ Tesseract Scene Graph Const.
 
 
 Tesseract State Solver. 
+
+\mbox{\Hypertarget{classtesseract__environment_1_1Environment_aa294a3e822562cb0d5a9734e1561caa8}\label{classtesseract__environment_1_1Environment_aa294a3e822562cb0d5a9734e1561caa8}} 
+\index{tesseract\_environment::Environment@{tesseract\_environment::Environment}!timestamp\_@{timestamp\_}}
+\index{timestamp\_@{timestamp\_}!tesseract\_environment::Environment@{tesseract\_environment::Environment}}
+\doxysubsubsection{\texorpdfstring{timestamp\_}{timestamp\_}}
+{\footnotesize\ttfamily std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point tesseract\+\_\+environment\+::\+Environment\+::timestamp\+\_\+ \{ std\+::chrono\+::system\+\_\+clock\+::now() \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classtesseract__environment_1_1Environment}{Environment}} timestamp. 
 
 
 
