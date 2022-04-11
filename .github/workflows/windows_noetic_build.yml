@@ -3,7 +3,7 @@ name: Windows-Noetic-Build
 on:
   push:
     branches:
-      - master
+      - main
       - feature/CommandLanguage
   pull_request:
   schedule:
