@@ -3,7 +3,7 @@ name: Benchmarking
 on:
   push:
     branches:
-      - master
+      - main
 
   # allow manually starting this workflow
   workflow_dispatch:
