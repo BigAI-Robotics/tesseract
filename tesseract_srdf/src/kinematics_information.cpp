@@ -55,9 +55,21 @@ void KinematicsInformation::clear()
 void KinematicsInformation::insert(const KinematicsInformation& other)
 {
   group_names.insert(other.group_names.begin(), other.group_names.end());
+  ChainGroups cg_orig(chain_groups);
+  JointGroups jg_orig(joint_groups);
+  LinkGroups lg_orig(link_groups);
+  chain_groups.clear();
+  joint_groups.clear();
+  link_groups.clear();
+
   chain_groups.insert(other.chain_groups.begin(), other.chain_groups.end());
   joint_groups.insert(other.joint_groups.begin(), other.joint_groups.end());
   link_groups.insert(other.link_groups.begin(), other.link_groups.end());
+
+  chain_groups.insert(cg_orig.begin(), cg_orig.end());
+  joint_groups.insert(jg_orig.begin(), jg_orig.end());
+  link_groups.insert(lg_orig.begin(), lg_orig.end());
+
   for (const auto& group : other.group_states)
   {
     auto it = group_states.find(group.first);
