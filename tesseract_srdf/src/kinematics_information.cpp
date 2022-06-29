@@ -107,6 +107,7 @@ bool KinematicsInformation::hasGroup(const std::string& group_name) const
 void KinematicsInformation::addChainGroup(const std::string& group_name, const ChainGroup& chain_group)
 {
   chain_groups[group_name] = chain_group;
+  group_names.erase(group_name);
   group_names.insert(group_name);
 }
 
@@ -124,6 +125,7 @@ bool KinematicsInformation::hasChainGroup(const std::string& group_name) const
 void KinematicsInformation::addJointGroup(const std::string& group_name, const JointGroup& joint_group)
 {
   joint_groups[group_name] = joint_group;
+  group_names.erase(group_name);
   group_names.insert(group_name);
 }
 
@@ -141,6 +143,7 @@ bool KinematicsInformation::hasJointGroup(const std::string& group_name) const
 void KinematicsInformation::addLinkGroup(const std::string& group_name, const LinkGroup& link_group)
 {
   link_groups[group_name] = link_group;
+  group_names.erase(group_name);
   group_names.insert(group_name);
 }
 
