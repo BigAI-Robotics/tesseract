@@ -2,6 +2,31 @@
 Changelog for package tesseract_visualization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.0 (2022-07-06)
+-------------------
+* Update ros_industrial_cmake_boilerplate to 0.3.0 (`#795 <https://github.com/tesseract-robotics/tesseract/issues/795>`_)
+* Fix tesseract_ignition_visualization anchor
+* Static plugin loading using symbol module resolution (`#782 <https://github.com/tesseract-robotics/tesseract/issues/782>`_)
+
+0.9.11 (2022-06-30)
+-------------------
+* Updated CPack (`#786 <https://github.com/tesseract-robotics/tesseract/issues/786>`_)
+* Add missing gtest test_depends in tesseract_visualization
+* Update to use find_gtest macro
+* Contributors: Levi Armstrong, Michael Ripperger
+
+0.9.10 (2022-06-14)
+-------------------
+
+0.9.9 (2022-05-30)
+------------------
+
+0.9.8 (2022-05-30)
+------------------
+
+0.9.7 (2022-05-30)
+------------------
+
 0.9.6 (2022-05-02)
 ------------------
 

@@ -2,6 +2,42 @@
 Changelog for package tesseract_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.0 (2022-07-06)
+-------------------
+* Update ros_industrial_cmake_boilerplate to 0.3.0 (`#795 <https://github.com/tesseract-robotics/tesseract/issues/795>`_)
+* Static plugin loading using symbol module resolution (`#782 <https://github.com/tesseract-robotics/tesseract/issues/782>`_)
+
+0.9.11 (2022-06-30)
+-------------------
+* Renames in type erasure to avoid WIN32 defines
+* Updated CPack (`#786 <https://github.com/tesseract-robotics/tesseract/issues/786>`_)
+* Update to use find_gtest macro
+* Fix message in type_erasure.h
+* Contributors: John Wason, Levi Armstrong, Michael Ripperger
+
+0.9.10 (2022-06-14)
+-------------------
+* Add type erasure interface (`#776 <https://github.com/tesseract-robotics/tesseract/issues/776>`_)
+  * Add type erasure interface
+  * revert change to type erasure constructor
+* Update FindTinyXML2.cmake
+* Contributors: Levi Armstrong
+
+0.9.9 (2022-05-30)
+------------------
+* Fix find tcmalloc on melodic
+* Contributors: Levi Armstrong
+
+0.9.8 (2022-05-30)
+------------------
+* Fix Findtcmalloc_minimal.cmake
+* Contributors: Levi Armstrong
+
+0.9.7 (2022-05-30)
+------------------
+* Update Findtcmalloc.cmake to include threads and split out tcmalloc_minimal to Findtcmalloc_minimal.cmake
+* Contributors: Levi Armstrong
+
 0.9.6 (2022-05-02)
 ------------------
 * Normalize quaternion when decoding yaml Eigen::Isometry3d

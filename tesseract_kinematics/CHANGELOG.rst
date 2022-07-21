@@ -2,6 +2,37 @@
 Changelog for package tesseract_kinematics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.0 (2022-07-06)
+-------------------
+* Update ros_industrial_cmake_boilerplate to 0.3.0 (`#795 <https://github.com/tesseract-robotics/tesseract/issues/795>`_)
+* Static plugin loading using symbol module resolution (`#782 <https://github.com/tesseract-robotics/tesseract/issues/782>`_)
+
+0.9.11 (2022-06-30)
+-------------------
+* Improve manipulability calculcation (`#787 <https://github.com/tesseract-robotics/tesseract/issues/787>`_)
+  * Use SelfAdjointEigenSolver
+  * Simplify calculation of measure = sqrt(condition)
+  * Simplify calculation of volume
+  Co-authored-by: christian.petersmeier <christian.petersmeier@uni-bielefeld.de>
+* Updated CPack (`#786 <https://github.com/tesseract-robotics/tesseract/issues/786>`_)
+* Add lapack test_depends tesseract_kinematics
+* Update to use find_gtest macro
+* Contributors: Levi Armstrong, Michael Ripperger, Robert Haschke
+
+0.9.10 (2022-06-14)
+-------------------
+
+0.9.9 (2022-05-30)
+------------------
+
+0.9.8 (2022-05-30)
+------------------
+
+0.9.7 (2022-05-30)
+------------------
+* Fix numerical issue in manipulability calculation
+* Contributors: Levi Armstrong
+
 0.9.6 (2022-05-02)
 ------------------
 

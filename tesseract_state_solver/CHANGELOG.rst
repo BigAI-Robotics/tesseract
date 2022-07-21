@@ -2,6 +2,28 @@
 Changelog for package tesseract_state_solver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.0 (2022-07-06)
+-------------------
+* Update ros_industrial_cmake_boilerplate to 0.3.0 (`#795 <https://github.com/tesseract-robotics/tesseract/issues/795>`_)
+
+0.9.11 (2022-06-30)
+-------------------
+* Updated CPack (`#786 <https://github.com/tesseract-robotics/tesseract/issues/786>`_)
+* Update to use find_gtest macro
+* Contributors: Levi Armstrong, Michael Ripperger
+
+0.9.10 (2022-06-14)
+-------------------
+
+0.9.9 (2022-05-30)
+------------------
+
+0.9.8 (2022-05-30)
+------------------
+
+0.9.7 (2022-05-30)
+------------------
+
 0.9.6 (2022-05-02)
 ------------------
 
