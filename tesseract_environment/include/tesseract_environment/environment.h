@@ -171,7 +171,7 @@ public:
    * @return SceneGraphConstPtr
    */
   tesseract_scene_graph::SceneGraph::ConstPtr getSceneGraph() const;
-
+  tesseract_scene_graph::SceneGraph::Ptr getSceneGraphRef();
   /**
    * @brief Get a groups joint names
    * @param group_name The group name

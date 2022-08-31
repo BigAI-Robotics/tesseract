@@ -330,6 +330,8 @@ bool Environment::applyCommand(Command::ConstPtr command) { return applyCommands
 
 tesseract_scene_graph::SceneGraph::ConstPtr Environment::getSceneGraph() const { return scene_graph_const_; }
 
+tesseract_scene_graph::SceneGraph::Ptr Environment::getSceneGraphRef() { return scene_graph_; }
+
 std::vector<std::string> Environment::getGroupJointNames(const std::string& group_name) const
 {
   std::shared_lock<std::shared_mutex> lock(mutex_);
@@ -421,6 +423,13 @@ tesseract_kinematics::KinematicGroup::UPtr Environment::getKinematicGroup(const 
   CONSOLE_BRIDGE_logDebug(
       "Environment, getKinematicGroup(%s, %s) cache miss!", group_name.c_str(), ik_solver_name.c_str());
   std::vector<std::string> joint_names = getGroupJointNames(group_name);
+
+  // std::cout << "jn: \n";
+  // for (auto j: joint_names){
+  //   std::cout << j << ", ";
+  // }
+  // std::cout << std::endl;
+  // std::cout << current_state_.getJointValues(joint_names) << std::endl;
 
   if (ik_solver_name.empty())
     ik_solver_name = kinematics_factory_.getDefaultInvKinPlugin(group_name);
@@ -1930,7 +1939,10 @@ bool Environment::applyAddKinematicsInformationCommand(const AddKinematicsInform
     for (const auto& group : info.inv_plugin_infos)
     {
       for (const auto& solver : group.second.plugins)
+      {
+        // std::cout << "add kin info config: " << solver.first << std::endl << solver.second.config << std::endl;
         kinematics_factory_.addInvKinPlugin(group.first, solver.first, solver.second);
+      }
 
       if (!group.second.default_plugin.empty())
         kinematics_factory_.setDefaultInvKinPlugin(group.first, group.second.default_plugin);
