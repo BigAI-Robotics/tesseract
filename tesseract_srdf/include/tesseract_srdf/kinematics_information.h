@@ -90,6 +90,8 @@ struct KinematicsInformation
   /** @brief Clear the kinematics information */
   void clear();
 
+  KinematicsInformation clone() const;
+
   /** @brief Check if group exists */
   bool hasGroup(const std::string& group_name) const;
 

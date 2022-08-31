@@ -52,6 +52,31 @@ void KinematicsInformation::clear()
   kinematics_plugin_info.clear();
 }
 
+KinematicsInformation KinematicsInformation::clone() const
+{
+  KinematicsInformation kin;
+  kin.clear();
+  kin.group_names = group_names;
+  kin.chain_groups = chain_groups;
+  kin.joint_groups = joint_groups;
+  kin.link_groups = link_groups;
+  kin.group_states = group_states;
+  kin.group_tcps = group_tcps;
+  kin.kinematics_plugin_info = kinematics_plugin_info;
+  for (auto k : kinematics_plugin_info.inv_plugin_infos)
+  {
+    for (const auto& solver : k.second.plugins)
+    {
+      tesseract_common::PluginInfo info;
+      info.class_name = solver.second.class_name;
+      YAML::Node inv = YAML::Clone(solver.second.config);
+      info.config = inv;
+      kin.kinematics_plugin_info.inv_plugin_infos.at(k.first).plugins.at(solver.first) = info;
+    }
+  }
+  return kin;
+}
+
 void KinematicsInformation::insert(const KinematicsInformation& other)
 {
   group_names.insert(other.group_names.begin(), other.group_names.end());
